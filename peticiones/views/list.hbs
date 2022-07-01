@@ -1,0 +1,48 @@
+<div>
+    <h1>A ver si entendemos cómo repartir el código entre los archivos 
+        <br>
+        --> tenemos que hacer 2 cosas: repartir las librerias (a) y repartir el código de renderizado (b)
+    </h1>
+    <h2>  1a) Creamos una carpeta (por ejemplo config) con archivos js de librerias/frameworks y las rutas, tipo:  <br>
+        <img src="./images/Captura de pantalla 2022-06-27 a las 17.36.06.png" alt="muuu"height="15%" width="20%"></h2>
+    <body>
+    <h2>2a) dentro del archivo de las librerias, por ejemplo el de HBS ponemos:</h2>  <br>
+    <img src="./images/Captura de pantalla 2022-06-27 a las 17.38.42.png" alt="lalala" height="15%" width="40%">
+    </body>
+    <h2>3a) y luego en app.js lo requerimos</h2>
+    <body>
+    <img src="./images/Captura de pantalla 2022-06-27 a las 17.40.12.png" alt="sads" height="10%" width="30%">  
+    buscamos básicamente en donde se encuentra para hacerle el require
+    </body>
+</div>
+<div>
+<h2>-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x</h2>
+<h2>-x-x-  Ahora la parte de hacer el render en donde lo queremos hacer de lo que queremos hacer  -x-x</h2>
+    <h2>
+    De malas tendría este aspecto: <br>
+    <img src="./images/Captura de pantalla 2022-06-27 a las 17.43.39.png" alt="bulala" height="30%" width="35%">
+    </h2>
+<h2>Esto lo vamos a dividir en 3 partes distintas y repartirlo entre archivos</h2>
+    </body>
+    <h2> 1a) Un archivo en la carpeta de configs (que puede llamarse routers) con la siguiente forma</h2>
+    <body>
+        <br>
+        <img src="./images/Captura de pantalla 2022-06-27 a las 17.47.34.png" alt="buu" height="30%" width="40%"> <br>
+<h2>
+-> La línea 8 ayuda a exportar todas las rutas para luego requerirlo en app.js <br>
+-> La línea 3 busca en la carpeta de controllers el archivo misc.controller.hbs <--- la extensión no hace falta escribirla<br>
+-> En la línea 5 le estamos diciendo dónde colocar el archivo que va a buscar --('/') -- y qué archivo va a renderizar -- (misc.home)--.  "home" puede ser cualquier otra que haya en ese archivo.
+</h2> <h2>
+<br>  Vamos a ver qué tenemos que hacer en la línea 3-> en ('../controllers/misc.controller') <br>
+<img src="./images/Captura de pantalla 2022-06-27 a las 18.09.51.png" alt="What=" height="30%" width="50%">
+<br> 2b) esto basicamente crea algo llamado home que es lo que usamos para decirle a la línea 5 del router qué mostrar y donde <br>
+<br> 3b) y lo último que hacemos es ir a app.js y poner:  <br><img src="./images/Captura de pantalla 2022-06-27 a las 17.33.51.png" alt="eh" height="10%" width="20%" > <br><br><br>
+</h2>
+
+    </body>
+</div>
+
+
+
+
+{{!-- Hago una carpeta llamada controller por ejemplo donde van las las movidas con req, res, next y le digo donde hacer el res.render(ubicación del archivo que se va a mostrar) --}}

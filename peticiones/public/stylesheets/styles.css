@@ -1,0 +1,13 @@
+h1{
+    color:red;
+}
+a{
+    display: inline-block;
+    border:2px dashed rgb(255, 0, 0);
+    background-color: rgb(235, 223, 165);
+    padding: 5px;
+    margin: 4px;
+}
+button{
+    padding: 5px;
+}
